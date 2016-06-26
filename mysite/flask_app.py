@@ -2,6 +2,7 @@ from flask import Flask, render_template
 
 
 app = Flask(__name__)
+app.config["DEBUG"] = True
 
 
 @app.route('/')
@@ -40,3 +41,7 @@ def orienteering():
 def contact():
         return render_template('contact.html',
                                 title='Contact')
+
+@app.route("/contact2")
+def contact2():
+    return render_template("contact2.html")
