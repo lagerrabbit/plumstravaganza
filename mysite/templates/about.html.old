@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="keywords" content="Plumstravaganza, Plumstead, Festival, Art Plumstead">
+  <title>About</title>
+  <link rel="icon" type="image/png" href="/static/images/favicon.ico">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Plumstravaganza</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+        <li class="active"><a href="/about.html">About</a></li>
+
+
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+    <div class="container" >
+        <div class ="jumbotron" style="background-color:Plum;text-align: center;" >
+            <h1><img src="/static/images/plumstravaganza.png" alt="Plumstravaganza Logo" width="150">  Plumstravaganza 2016</h1>
+            <h2>29<sup>th</sup> August to 11<sup>th</sup> September</h2>
+        </div>
+ <!--       <p>Plumstravaganza 2016 is about recognising everything Plumstead has to offer and celebrating the contribution made by individuals, local groups and small businesses to the community. It is about bringing a sense of festival and fun to the streets.</p>-->
+
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-5">
+                    <h3>Plum Trail</h3>
+                    <p>The Plum Trail will launch on Monday 29th August and run for the duration of Plumstravaganza. The 50 or so posters in the Plum Trail will be located around the Plumstead, Glyndon and Shooters Hill wards at small businesses, community centres, libraries, churches and sports halls. Each poster will display a plum variety and an accompanying question to be entered on the downloadable answer form.</p>
+                    <p>Individuals and families are invited to participate by walking to each plum on the trail and answering the question they will find there. It will take several days to visit all of them, so allow plenty of time!</p>
+                    <p>Any Plumstead businesses wishing to attract local people from other parts of the area by displaying an A4 poster as part of the Plum Trail are invited to contact Plumstravaganza on the Art Plumstead stall at Plumstead Make Merry on Saturday 11th June.</p>
+                </div>
+                <div class="col-md-5">
+                    <h3>Events</h3>
+                    <p>We have had the following ideas suggested at our open meetings:</p>
+                    <p>Plum Trail, Poetry Competition, Short Story Competition, Open Gardens, Open Studios, Fun Plum Run, Foraging – Possibly linked to Cooking afterwards, Guerilla Art/Pavement Chalking, Poppy Making W/Shop, Community Felt Making, Come And Sing, For People Who Can Read A Musical Score, Musical Recital, Plum Quiz Night, Open Air (Or Inside) Painting/Drawing, Jam Competition, Tree Trail, Making Workshop From Natural Materials, Final Party, Pub Crawl, History Walk.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

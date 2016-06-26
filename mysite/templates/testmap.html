@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Open Space Web-Map builder Code</title>
+<!-- Download OpenSpace API using your key -->
+<script type="text/javascript" src="https://openspace.ordnancesurvey.co.uk/osmapapi/openspace.js?key=334903723BC92944E0530B6CA40A63BF"></script>
+<script type= "text/javascript" src="https://openspace.ordnancesurvey.co.uk/osmapapi/script/mapbuilder/basicmap.js"></script>
+<script type= "text/javascript" src="https://openspace.ordnancesurvey.co.uk/osmapapi/script/mapbuilder/searchbox.js"></script>
+<script type="text/javascript">
+//declare marker variables
+var pos, size, offset, infoWindowAnchor, icon, content, popUpSize;
+
+//variables for routes
+var linesLayer, points, lineFeature, lineString, routeMarkersLayer, routepos, routesize, routeoffset, routeicon;
+var style_blue = {strokeColor: "#0000CD", strokeOpacity: 0.5, strokeWidth: 4.5};
+
+function initmapbuilder()
+{
+//initiate the map
+var options = {resolutions: [2500, 1000, 500, 200, 100, 50, 25, 10, 5, 4, 2.5, 2, 1]};
+osMap = new OpenSpace.Map('map', options);
+
+//configure map options (basicmap.js)
+setglobaloptions();
+// add a box displaying co-ordinates (mouse over map to display) 
+makegrid()
+//add a postcode/gazetteer search box (see searchbox.js)
+addSearchBox(1);
+//set the center of the map and the zoom level
+osMap.setCenter(new OpenSpace.MapPoint(543247.39628077,177362.63829231),12);
+// add a marker
+pos = new OpenSpace.MapPoint(543798,176415);
+size = new OpenLayers.Size(33,45);
+offset = new OpenLayers.Pixel(-16,-36);
+infoWindowAnchor = new OpenLayers.Pixel(16,16);
+icon = new OpenSpace.Icon('https://openspace.ordnancesurvey.co.uk/osmapapi/img_versions/img_1.0.1/OS/images/markers/marker_red.png', size, offset, null, infoWindowAnchor);
+osMap.createMarker(pos, icon, null, null);
+// add a marker
+pos = new OpenSpace.MapPoint(543607,176517);
+size = new OpenLayers.Size(33,45);
+offset = new OpenLayers.Pixel(-16,-36);
+infoWindowAnchor = new OpenLayers.Pixel(16,16);
+icon = new OpenSpace.Icon('https://openspace.ordnancesurvey.co.uk/osmapapi/img_versions/img_1.0.1/OS/images/markers/marker_red.png', size, offset, null, infoWindowAnchor);
+osMap.createMarker(pos, icon, null, null);
+// add a marker
+pos = new OpenSpace.MapPoint(543187,176654);
+size = new OpenLayers.Size(33,45);
+offset = new OpenLayers.Pixel(-16,-36);
+infoWindowAnchor = new OpenLayers.Pixel(16,16);
+icon = new OpenSpace.Icon('https://openspace.ordnancesurvey.co.uk/osmapapi/img_versions/img_1.0.1/OS/images/markers/marker_red.png', size, offset, null, infoWindowAnchor);
+osMap.createMarker(pos, icon, null, null);
+// add a marker
+pos = new OpenSpace.MapPoint(543287,177111);
+size = new OpenLayers.Size(33,45);
+offset = new OpenLayers.Pixel(-16,-36);
+infoWindowAnchor = new OpenLayers.Pixel(16,16);
+icon = new OpenSpace.Icon('https://openspace.ordnancesurvey.co.uk/osmapapi/img_versions/img_1.0.1/OS/images/markers/marker_red.png', size, offset, null, infoWindowAnchor);
+osMap.createMarker(pos, icon, null, null);
+// add a marker
+pos = new OpenSpace.MapPoint(543485,177364);
+size = new OpenLayers.Size(33,45);
+offset = new OpenLayers.Pixel(-16,-36);
+infoWindowAnchor = new OpenLayers.Pixel(16,16);
+icon = new OpenSpace.Icon('https://openspace.ordnancesurvey.co.uk/osmapapi/img_versions/img_1.0.1/OS/images/markers/marker_red.png', size, offset, null, infoWindowAnchor);
+osMap.createMarker(pos, icon, null, null);
+linesLayer = osMap.getVectorLayer();
+// Set up layer for route markers
+routeMarkersLayer = new OpenLayers.Layer.Markers("Route Markers");
+//make a route
+points = new Array();
+points.push(new OpenLayers.Geometry.Point(543800,176466));
+points.push(new OpenLayers.Geometry.Point(543200,176598.5));
+points.push(new OpenLayers.Geometry.Point(543182.5,176638.5));
+points.push(new OpenLayers.Geometry.Point(543125,176676));
+points.push(new OpenLayers.Geometry.Point(543227.5,176813.5));
+points.push(new OpenLayers.Geometry.Point(543247.5,176843.5));
+points.push(new OpenLayers.Geometry.Point(543260,176988.5));
+points.push(new OpenLayers.Geometry.Point(543232.5,177111));
+points.push(new OpenLayers.Geometry.Point(543252.5,177118.5));
+points.push(new OpenLayers.Geometry.Point(543242.5,177131));
+points.push(new OpenLayers.Geometry.Point(543227.5,177123.5));
+points.push(new OpenLayers.Geometry.Point(543212.5,177188.5));
+points.push(new OpenLayers.Geometry.Point(543201.5,177254.5));
+points.push(new OpenLayers.Geometry.Point(543263.5,177235.5));
+points.push(new OpenLayers.Geometry.Point(543318.5,177247.5));
+points.push(new OpenLayers.Geometry.Point(543481.5,177392.5));
+points.push(new OpenLayers.Geometry.Point(543481.5,177392.5));
+// create a polyline feature from the array of points
+lineString = new OpenLayers.Geometry.LineString(points);
+lineFeature = new OpenLayers.Feature.Vector(lineString, null, style_blue);
+linesLayer.addFeatures([lineFeature]);
+//make a route
+points = new Array();
+points.push(new OpenLayers.Geometry.Point(543481.5,177392.5));
+// create a polyline feature from the array of points
+lineString = new OpenLayers.Geometry.LineString(points);
+lineFeature = new OpenLayers.Feature.Vector(lineString, null, style_blue);
+linesLayer.addFeatures([lineFeature]);
+//crate a route start/end marker
+routepos = new OpenSpace.MapPoint(543800,176466);
+routesize = new OpenLayers.Size(33,45);
+routeoffset = new OpenLayers.Pixel(-5,-37);
+routeicon = new OpenSpace.Icon('https://openspace.ordnancesurvey.co.uk/osmapapi/img_versions/img_1.1/mapbuilder/routemarker-start.png', routesize, routeoffset, null, null);
+routeMarkersLayer.addMarker(new OpenLayers.Marker(routepos, routeicon));
+//crate a route start/end marker
+routepos = new OpenSpace.MapPoint(543481.5,177392.5);
+routesize = new OpenLayers.Size(33,45);
+routeoffset = new OpenLayers.Pixel(-5,-37);
+routeicon = new OpenSpace.Icon('https://openspace.ordnancesurvey.co.uk/osmapapi/img_versions/img_1.1/mapbuilder/routemarker-end.png', routesize, routeoffset, null, null);
+routeMarkersLayer.addMarker(new OpenLayers.Marker(routepos, routeicon));
+//crate a route start/end marker
+routepos = new OpenSpace.MapPoint(543481.5,177392.5);
+routesize = new OpenLayers.Size(33,45);
+routeoffset = new OpenLayers.Pixel(-5,-37);
+routeicon = new OpenSpace.Icon('https://openspace.ordnancesurvey.co.uk/osmapapi/img_versions/img_1.1/mapbuilder/routemarker-start.png', routesize, routeoffset, null, null);
+routeMarkersLayer.addMarker(new OpenLayers.Marker(routepos, routeicon));
+osMap.addLayer(routeMarkersLayer);
+
+clusterControl = new OpenSpace.Control.ClusterManager();
+osMap.addControl(clusterControl);
+clusterControl.activate();}
+</script>
+</head>
+<body onload="initmapbuilder()">
+<div id="map" style="border: 1px solid black; width:540px; height:440px;"></div>
+</body>
+</html>

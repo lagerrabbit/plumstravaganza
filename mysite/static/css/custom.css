@@ -1,0 +1,16 @@
+date {
+    color: plum;
+    text-shadow: 1px 1px #000000;
+}
+
+
+loc {
+    color:blue;
+}
+
+cost {
+    color: red;
+}
+time{
+    color:green;
+}

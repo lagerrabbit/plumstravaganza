@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="keywords" content="Plumstravaganza, Plumstead, Festival, Art Plumstead, What's on in Plumstead, What's on in Greenwich, Plumstead activities">
+    {% if title %}
+        <title>Plumstravaganza - {{ title }}</title>
+    {% else %}
+        <title>Plumstravaganza</title>
+    {% endif %}
+    <link rel="icon" type="image/png" href="/static/images/favicon.ico">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/custom.css">
+    {% if carousel %}
+        <style>
+            .carousel-inner > .item > img,
+            .carousel-inner > .item > a > img {
+            width: 70%;
+            margin: auto;
+            }
+        </style>
+    {% endif %}
+
+</head>
+<body>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Plumstravaganza</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+
+                    <li{% if title =='Home' %} class="active"{% endif %}><a href="/home">Home</a></li>
+                    <li{% if title =='About' %} class="active"{% endif %}><a href="/about">About</a></li>
+                    <li {% if title =='Events' %} class="dropdown, active"{% else %} class="dropdown" {% endif %}>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="/events">Events <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/events">Events by Date</a></li>
+                            <li><a href="/events/cyanotype">Cyanotype workshop</a></li>
+                            <li><a href="/events/orienteering">Orienteering</a></li>
+                            <li><a href="/events/poetry">Poetry Competition</a></li>
+
+
+                        </ul>
+                    </li>
+                    <li{% if title =='Contact' %} class="active"{% endif %}><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" >
+        <div class ="jumbotron" style="background-color:Plum;text-align: center;" >
+            <h1><img src="/static/images/plumstravaganza.png" alt="Plumstravaganza Logo" width="150">  Plumstravaganza 2016</h1>
+            <h2>29<sup>th</sup> August to 11<sup>th</sup> September</h2>
+        </div>
+        {% block content %}{% endblock %}
+
+    </div>
+
+</body>
+</html>
