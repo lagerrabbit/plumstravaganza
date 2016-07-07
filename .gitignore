@@ -1,0 +1,11 @@
+.ssh/
+.virtualenvs/
+.bash_history
+.bashrc
+.ipython/
+.local/
+.profile
+.python_history
+.viminfo
+.vimrc
+
