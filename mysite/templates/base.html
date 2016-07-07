@@ -2,10 +2,14 @@
 <html lang="en">
 <head>
     <meta name="keywords" content="Plumstravaganza, Plumstead, Festival, Art Plumstead, What's on in Plumstead, What's on in Greenwich, Plumstead activities">
-    {% if title %}
-        <title>Plumstravaganza - {{ title }}</title>
+    {% if page %}
+        <title>Plumstravaganza - {{ page }}</title>
     {% else %}
-        <title>Plumstravaganza</title>
+        {% if title %}
+            <title>Plumstravaganza - {{ title }}</title>
+        {% else %}
+            <title>Plumstravaganza - recognising everything Plumstead has to offer</title>
+        {% endif %}
     {% endif %}
     <link rel="icon" type="image/png" href="/static/images/favicon.ico">
     <meta charset="utf-8">
