@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="keywords" content="Plumstravaganza, Plumstead, Festival, Art Plumstead, What's on in Plumstead, What's on in Greenwich, Plumstead activities">
+    <meta name="keywords" content="Plumstravaganza, Plumstead, Festival, Art Plumstead, What's on in Plumstead, What's on in Greenwich, Plumstead activities, Plumstead Extravaganza">
+    <meta name="description" content="Plumstravaganza 2016 is about recognising everything Plumstead has to offer and celebrating the contribution made by individuals, local groups and small businesses to the community. It is about bringing a sense of festival and fun to the streets.">
     {% if page %}
         <title>Plumstravaganza - {{ page }}</title>
     {% else %}
@@ -32,7 +33,7 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default"  id="top">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -50,9 +51,12 @@
                     <li {% if title =='Events' %} class="dropdown, active"{% else %} class="dropdown" {% endif %}>
                         <a class="dropdown-toggle" data-toggle="dropdown" href="/events">Events <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/events">Events by Date</a></li>
+                            <li><a href="/events">Event Lists</a></li>
                             <li><a href="/events/cyanotype">Cyanotype workshop</a></li>
                             <li><a href="/events/orienteering">Orienteering</a></li>
+                            <li><a href="/events/openstudios">Open Studios</a></li>
+                            <li><a href="/events/plumtrail">Plum Trail</a></li>
+                            <li><a href="/events/photography">Photography Competition</a></li>
                             <li><a href="/events/poetry">Poetry Competition</a></li>
 
 
@@ -66,12 +70,22 @@
 
     <div class="container" >
         <div class ="jumbotron" style="background-color:Plum;text-align: center;" >
-            <h1><img src="/static/images/plumstravaganza.png" alt="Plumstravaganza Logo" width="150">  Plumstravaganza 2016</h1>
+            <h1><img src="/static/images/plumstravaganza.png" alt="Plumstravaganza Logo" width="150">Plumstravaganza 2016</h1>
             <h2>29<sup>th</sup> August to 11<sup>th</sup> September</h2>
         </div>
         {% block content %}{% endblock %}
 
     </div>
 
+
+<footer>
+
+        <div style="text-align:center">
+            <a class="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a>
+            <a href="https://twitter.com/plumstravaganza" class="twitter-follow-button" data-show-screen-name="false" data-show-count="false">Follow @plumstravaganza</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <iframe src="https://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.plumstravaganza.co.uk%2F&width=50&layout=button&action=like&size=small&show_faces=false&share=false&height=65&appId" width="50" height="20" style="border:none;overflow:hidden"   ></iframe>
+            <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fwww.plumstravaganza.co.uk%2F&layout=button&size=small&mobile_iframe=true&width=58&height=20&appId" width="58" height="20" style="border:none;overflow:hidden"></iframe>
+        </div>
+</footer>
 </body>
 </html>

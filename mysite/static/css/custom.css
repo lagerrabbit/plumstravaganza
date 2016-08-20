@@ -8,7 +8,6 @@ date {
     text-shadow: 1px 1px #000000;
     font-size: 120%;
 }
-
 loc {
     color:blue;
 }
@@ -18,4 +17,39 @@ cost {
 }
 time{
     color:green;
+}
+div.loc {
+    color:blue;
+}
+
+div.cost {
+    color: red;
+}
+div.datetime{
+    color: green;
+    text-align: right;
+}
+div.time{
+    color:green;
+}
+div.event{
+        font-size:115%;
+        font-weight:550;
+
+}
+div.name{
+        font-size:120%;
+        font-weight:700;
+
+}
+h1{
+     word-wrap: break-word;
+     -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+     -ms-hyphens: auto;
+     -o-hyphens: auto;
+     hyphens: auto;
+}
+.top-buffer {
+    margin-top:0.5%;
 }

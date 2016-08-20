@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<ul class="nav nav-tabs">
+  <li><a href="/events">By Date</a></li>
+    <li><a href="/byName">By Name</a></li>
+  <li class="active"><a href="#">Calendar View</a></li>
+
+</ul>
+<br />
+<div class="embed-responsive embed-responsive-4by3">
+    <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;mode=WEEK&amp;bgcolor=%23ffffff&amp;src=plumstravaganza%40gmail.com&dates=20160901/20160930&amp;color=%2342104A&amp;ctz=Europe%2FLondon" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+</div>
+<br>
+<br>
+{% endblock %}
