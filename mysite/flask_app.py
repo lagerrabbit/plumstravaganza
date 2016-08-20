@@ -1,9 +1,28 @@
 from flask import Flask, render_template, request, url_for, redirect
+from flask_mail import Mail, Message
+import config
 
 
 
 app = Flask(__name__)
+
 app.config["DEBUG"] = True
+
+# Flask-Mail Configuration
+
+app.config.from_object(__name__)
+app.config.update(
+    MAIL_SERVER = 'mail.gmx.com',
+    MAIL_PORT = 587,
+    MAIL_USE_TLS = True,
+    MAIL_USE_SSL = False,
+    MAIL_USERNAME = config.username,
+    MAIL_PASSWORD = config.password,
+    DEFAULT_MAIL_SENDER = 'plumstravaganza@gmx.co.uk'
+    )
+
+
+mail = Mail(app)
 
 app.secret_key = 'development key'
 
@@ -88,4 +107,8 @@ def contact():
 def contact2():
     if request.method == 'GET':
         return render_template("contact2.html")
+    result = request.form
+    msg = Message('Contact Us', sender='plumstravaganza@gmx.co.uk',  recipients=["plumstravaganza@gmail.com"])
+    msg.body = result['contents']
+    mail.send(msg)
     return redirect(url_for("contact"))
